@@ -1,0 +1,228 @@
+:root {
+    --color-text: #999999;
+    --color-primary: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    color: var(--color-primary);
+}
+
+.header {
+    height: 100px;
+    font-size: 2.8rem;
+    border-bottom: 1px solid #000;
+}
+
+.header--text {
+    color: black;
+    line-height: 100px;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    display: block;
+}
+
+.row {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 105px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("//cdn.shopify.com/s/files/1/0335/3526/2856/t/1/assets/1591868133128.jpg?v=11091857531103586296");
+    background-size: cover;
+    background-position: top;
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    &--content {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        width: 33%;
+    }
+    &--content--center {
+        text-align: center;
+        margin: auto;
+    }
+    &--content--right {
+        text-align: left;
+    }
+}
+
+.box {
+    font-size: 2rem;
+    font-weight: 400;
+    &__icon {
+        width: 34px;
+        margin: 6px 0;
+    }
+    &__name {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    &__desc {
+        font-size: 1.8rem;
+        margin: 6px 0 36px 0;
+        color: var(--color-text);
+    }
+    &__img {
+        width: 80%;
+        margin: -20px 0;
+    }
+}
+
+.box__suggestions {
+    padding: 20px;
+    background-color: rgb(25, 123, 189);
+    margin: 30px;
+    font-size: 2rem;
+    font-weight: 400;
+    &__question {
+        margin-bottom: 16px;
+    }
+    &__answer {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+}
+
+.feature-bottom {
+    background-image: url('');
+    color: black;
+}
+
+.feature-bottom .feature--content--center .box {
+    &>.box__img {
+        width: 80%;
+        margin: 0;
+    }
+    &>.box__suggestions {
+        width: 80%;
+        display: inline-block;
+        margin: -8px;
+    }
+    &>.box__suggestions {
+        color: white;
+        background-color: rgb(55, 53, 65);
+    }
+}
+
+
+/* > PC low resolution */
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .row {
+        width: 984px;
+    }
+}
+
+
+/* Tablet - PC low resolution */
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .row {
+        width: 800px;
+    }
+    .feature--content {
+        &:nth-child(2) {
+            order: 1;
+            height: 100%;
+            width: 100%;
+        }
+        &:nth-child(1) {
+            order: 2;
+            width: 50%;
+            padding: 0 15px;
+        }
+        &:nth-child(3) {
+            padding: 0 15px;
+            order: 2;
+            width: 50%;
+        }
+    }
+    .feature-bottom .feature--content--center {
+        margin-bottom: 30px;
+    }
+    .feature {
+        padding-top: 82px;
+    }
+    .row {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        width: 540px;
+        flex-direction: column;
+    }
+    .feature {
+        padding-top: 62px;
+    }
+    .row {
+        margin-top: 15px;
+    }
+    .feature--content {
+        &:nth-child(2) {
+            order: 1;
+            height: 100%;
+            width: 100%;
+        }
+        &:nth-child(1) {
+            order: 2;
+            width: 100%;
+            text-align: left;
+        }
+        &:nth-child(3) {
+            order: 3;
+            width: 100%;
+        }
+    }
+    .box {
+        &__icon {
+            margin: 0 0 4px 0;
+        }
+        &__desc {
+            margin: 4px 0 20px 0;
+        }
+        &__suggestions {
+            margin: 40px 0;
+        }
+    }
+    .feature-bottom .feature--content--center .box {
+        &>.box__img {
+            width: 100%;
+        }
+        &>.box__suggestions {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .row {
+        width: 410px;
+    }
+    .feature--content {
+        max-width: 90%;
+    }
+}
